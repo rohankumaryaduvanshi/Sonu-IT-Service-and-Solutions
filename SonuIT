@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONU IT & SECURITY SERVICE | Premium</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-bg: #070b14;
+            --secondary-bg: #0c1424;
+            --gold: #e6b800;
+            --gold-light: #ffdf4d;
+            --neon-blue: #00f0ff;
+            --text-light: #e0e6ed;
+            --text-gray: #8b9bb4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* --- Premium Navbar --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 5%;
+            background: rgba(7, 11, 20, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(230, 184, 0, 0.15);
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        /* Coded SVG Logo - No Image Needed */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        .svg-logo {
+            width: 45px;
+            height: 50px;
+            filter: drop-shadow(0 0 8px rgba(230, 184, 0, 0.5));
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 5px rgba(230, 184, 0, 0.4)); }
+            100% { filter: drop-shadow(0 0 15px rgba(230, 184, 0, 0.9)); }
+        }
+        .brand-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .brand-text h1 span { color: var(--gold); }
+        .brand-text p {
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 2px;
+            bottom: -5px; left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            background: radial-gradient(circle at center, #111d35 0%, var(--primary-bg) 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        /* Background Animated Grid */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+            animation: grid-move 10s linear infinite;
+            z-index: 1;
+        }
+        @keyframes grid-move {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(230, 184, 0, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, var(--gold), #b38f00);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(230, 184, 0, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(230, 184, 0, 0.5);
+        }
+
+        /* --- Sections Shared --- */
+        section { padding: 100px 5%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: #fff;
+        }
+        .section-title span { color: var(--gold); }
+        .section-subtitle {
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- Services Grid --- */
+        .services { background-color: var(--secondary-bg); }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: var(--primary-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top right, rgba(230, 184, 0, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(230, 184, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .service-card:hover::after { opacity: 1; }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* --- Stats / Why Choose Us --- */
+        .stats-section {
+            background: linear-gradient(rgba(7, 11, 20, 0.9), rgba(7, 11, 20, 0.9)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            padding: 80px 5%;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        .stat-text {
+            color: #fff;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- Contact Section --- */
+        .contact { background-color: var(--primary-bg); }
+        .contact-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            border-radius: 20px;
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-info h3 { font-size: 2rem; margin-bottom: 20px; color: var(--gold); }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .info-icon {
+            width: 50px; height: 50px;
+            background: rgba(230, 184, 0, 0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        .info-text h4 { color: #fff; font-size: 1.1rem; }
+        .info-text p { color: var(--text-gray); font-size: 1rem; }
+        
+        .contact-action { flex: 1; min-width: 300px; text-align: center; }
+        .call-btn {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .call-btn:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px rgba(230, 184, 0, 0.6);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #04070c;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-logo { margin-bottom: 20px; }
+        .social-icons { margin: 20px 0; }
+        .social-icons a {
+            color: var(--text-gray);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover { color: var(--gold); }
+        .developer-tag {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .developer-tag p { font-size: 0.9rem; color: #556677; }
+        .developer-tag span {
+            color: var(--neon-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+            .contact-wrapper { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Premium Navbar -->
+    <nav>
+        <a href="#" class="brand-logo">
+            <!-- PURE CSS/SVG SHIELD LOGO (No image required!) -->
+            <svg class="svg-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#e6b800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="11" r="3" stroke="#00f0ff" stroke-width="2"/>
+                <path d="M12 8V14M9 11H15" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <div class="brand-text">
+                <h1>SONU <span>IT</span></h1>
+                <p>Security Service</p>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <span class="hero-badge">Next-Gen Tech Solutions</span>
+            <h2>SMART SOLUTIONS<br>SAFE FUTURE</h2>
+            <p>Providing enterprise-grade Computer Repair, Advanced Networking, and high-definition CCTV security solutions in Andaman.</p>
+            <a href="#contact" class="btn-primary">Get Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header reveal">
+            <span class="section-subtitle">What We Do</span>
+            <h2 class="section-title">Our Premium <span>Services</span></h2>
+        </div>
+        <div class="grid-container">
+            <div class="service-card reveal">
+                <i class="fa-solid fa-desktop service-icon"></i>
+                <h3>Computer Systems</h3>
+                <p>Advanced diagnostic, hardware replacement, and performance tuning for all PC brands. Get your system running like new.</p>
+            </div>
+            <div class="service-card reveal">
+                <i class="fa-solid fa-laptop-code service-icon"></i>
+                <h3>Laptop Service</h3>
+                <p>Motherboard chip-level repairing, screen replacement, and OS troubleshooting by certified technicians.</p>
+            </div>
+            <div class="service-card reveal">
+                <i class="fa-solid fa-network-wired service-icon"></i>
+                <h3>Enterprise Networking</h3>
+                <p>Seamless LAN/WAN architecture, Wi-Fi 6 setup, and secure server configuration for offices and homes.</p>
+            </div>
+            <div class="service-card reveal">
+                <i class="fa-solid fa-video service-icon"></i>
+                <h3>CCTV Security</h3>
+                <p>High-resolution IP cameras, DVR/NVR setup, and remote mobile viewing integration for complete peace of mind.</p>
+            </div>
+            <div class="service-card reveal">
+                <i class="fa-solid fa-print service-icon"></i>
+                <h3>Printer Solutions</h3>
+                <p>Laser and inkjet printer servicing, cartridge refilling, and mechanical error resolutions.</p>
+            </div>
+            <div class="service-card reveal">
+                <i class="fa-brands fa-youtube service-icon"></i>
+                <h3>Live Broadcasting</h3>
+                <p>Multi-cam live streaming setups for corporate events, functions, and seminars on all digital platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Why Choose Us -->
+    <section id="why-us" class="stats-section">
+        <div class="stats-grid reveal">
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-text">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-text">Technical Support</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">A+</div>
+                <div class="stat-text">Quality Service</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header reveal">
+            <span class="section-subtitle">Reach Out</span>
+            <h2 class="section-title">Connect With <span>Us</span></h2>
+        </div>
+        <div class="contact-wrapper reveal">
+            <div class="contact-info">
+                <h3>SONU IT & SECURITY</h3>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <h4>Head Office</h4>
+                        <p>Gandhi Market, Sri Vijaya Puram - 744101</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email Support</h4>
+                        <p>support@sonuit.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-action">
+                <p style="color: var(--text-gray); margin-bottom: 20px;">Available for emergency IT support</p>
+                <a href="tel:9531907705" class="call-btn"><i class="fa-solid fa-phone"></i> 9531907705</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="brand-text footer-logo">
+            <h1 style="font-size: 1.2rem;">SONU <span style="color:var(--gold)">IT</span></h1>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p style="color: #666; font-size: 0.9rem;">&copy; 2026 SONU IT & SECURITY SERVICE. All rights reserved.</p>
+        
+        <div class="developer-tag">
+            <p>Designed & Developed by <br><span>Rohan Kumar Yadav</span></p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919531907705" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
+</body>
+</html>
